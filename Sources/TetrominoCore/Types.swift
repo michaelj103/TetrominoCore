@@ -9,6 +9,11 @@ public struct Point : Hashable {
     public let x: Int
     public let y: Int
     
+    public init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
+    }
+    
     public func pointAbove() -> Point {
         return Point(x: x, y: y-1)
     }
@@ -45,10 +50,21 @@ public struct Point : Hashable {
 public struct Size {
     public let width: Int
     public let height: Int
+    
+    public init(width: Int, height: Int) {
+        self.width = width
+        self.height = height
+    }
 }
 
 public struct PlacedPiece {
     public let id: Int
     public let rotation: Int
     public let position: Point
+    
+    public init(id: Int, rotation: Int, position: Point) {
+        self.id = id
+        self.rotation = rotation
+        self.position = position
+    }
 }
