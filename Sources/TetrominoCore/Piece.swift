@@ -54,5 +54,16 @@ public class Piece {
         return rotatedPoints
     }
     
+    // Default tetris pieces
+    public static var defaultPieces = [
+        Piece("T", points: [Point(x: 1, y: 0), Point(x: 0, y: 1), Point(x: 1, y: 1), Point(x: 2, y: 1)]),
+        Piece("L", points: [Point(x: 0, y: 0), Point(x: 0, y: 1), Point(x: 0, y: 2), Point(x: 1, y: 2)]),
+        Piece("J", points: [Point(x: 1, y: 0), Point(x: 1, y: 1), Point(x: 1, y: 2), Point(x: 0, y: 2)]),
+        Piece("I", points: [Point(x: 0, y: 0), Point(x: 0, y: 1), Point(x: 0, y: 2), Point(x: 0, y: 3)]),
+        Piece("S", points: [Point(x: 1, y: 0), Point(x: 2, y: 0), Point(x: 0, y: 1), Point(x: 1, y: 1)]),
+        Piece("Z", points: [Point(x: 0, y: 0), Point(x: 1, y: 0), Point(x: 1, y: 1), Point(x: 2, y: 1)]),
+        Piece("O", points: [Point(x: 0, y: 0), Point(x: 1, y: 0), Point(x: 0, y: 1), Point(x: 1, y: 1)]),
+    ]
+    
 }
 

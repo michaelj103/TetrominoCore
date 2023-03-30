@@ -81,20 +81,9 @@ public class PieceStore {
     }
     
     private func _registerDefaultPieces() {
-        let tPiece = Piece("T", points: [Point(x: 1, y: 0), Point(x: 0, y: 1), Point(x: 1, y: 1), Point(x: 2, y: 1)])
-        _registerPiece(tPiece)
-        let lPiece = Piece("L", points: [Point(x: 0, y: 0), Point(x: 0, y: 1), Point(x: 0, y: 2), Point(x: 1, y: 2)])
-        _registerPiece(lPiece)
-        let jPiece = Piece("J", points: [Point(x: 1, y: 0), Point(x: 1, y: 1), Point(x: 1, y: 2), Point(x: 0, y: 2)])
-        _registerPiece(jPiece)
-        let iPiece = Piece("I", points: [Point(x: 0, y: 0), Point(x: 0, y: 1), Point(x: 0, y: 2), Point(x: 0, y: 3)])
-        _registerPiece(iPiece)
-        let sPiece = Piece("S", points: [Point(x: 1, y: 0), Point(x: 2, y: 0), Point(x: 0, y: 1), Point(x: 1, y: 1)])
-        _registerPiece(sPiece)
-        let zPiece = Piece("Z", points: [Point(x: 0, y: 0), Point(x: 1, y: 0), Point(x: 1, y: 1), Point(x: 2, y: 1)])
-        _registerPiece(zPiece)
-        let oPiece = Piece("O", points: [Point(x: 0, y: 0), Point(x: 1, y: 0), Point(x: 0, y: 1), Point(x: 1, y: 1)])
-        _registerPiece(oPiece)
+        for piece in Piece.defaultPieces {
+            _registerPiece(piece)
+        }
         
         initialCountsByID = [Int](repeating: 0, count: pieces.count)
         currentCountsByID = [Int](repeating: 0, count: pieces.count)
