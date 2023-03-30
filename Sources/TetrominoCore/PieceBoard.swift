@@ -5,7 +5,7 @@
 //  Created by Michael Brandt on 6/15/22.
 //
 
-class PieceBoard {
+public class PieceBoard {
     let size: Size
     private var filledSpaces: [Bool]
     

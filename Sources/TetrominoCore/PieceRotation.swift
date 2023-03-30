@@ -5,7 +5,7 @@
 //  Created by Michael Brandt on 6/14/22.
 //
 
-class PieceRotation : Equatable {
+public class PieceRotation : Equatable {
     let pips: Set<Point>
     let size: Size
     let topPipX: Int
@@ -47,7 +47,7 @@ class PieceRotation : Equatable {
         return pips.contains(pt)
     }
     
-    static func == (lhs: PieceRotation, rhs: PieceRotation) -> Bool {
+    public static func == (lhs: PieceRotation, rhs: PieceRotation) -> Bool {
         return lhs.pips == rhs.pips
     }
 }

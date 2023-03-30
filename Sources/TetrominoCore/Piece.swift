@@ -5,10 +5,10 @@
 //  Created by Michael Brandt on 6/14/22.
 //
 
-class Piece {
-    let name: String
-    let rotations: [PieceRotation]
-    let pipCount: Int
+public class Piece {
+    public let name: String
+    public let rotations: [PieceRotation]
+    public let pipCount: Int
     
     init(_ name: String, points: [Point]) {
         self.name = name

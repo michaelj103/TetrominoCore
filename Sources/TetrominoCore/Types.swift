@@ -5,7 +5,7 @@
 //  Created by Michael Brandt on 6/14/22.
 //
 
-struct Point : Hashable {
+public struct Point : Hashable {
     let x: Int
     let y: Int
     
@@ -42,12 +42,12 @@ struct Point : Hashable {
     }
 }
 
-struct Size {
+public struct Size {
     let width: Int
     let height: Int
 }
 
-struct PlacedPiece {
+public struct PlacedPiece {
     let id: Int
     let rotation: Int
     let position: Point

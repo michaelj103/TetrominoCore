@@ -5,7 +5,7 @@
 //  Created by Michael Brandt on 6/15/22.
 //
 
-class PieceStore {
+public class PieceStore {
     private var pieces = [Piece]()
     private var idByName = [String:Int]()
     
@@ -13,11 +13,11 @@ class PieceStore {
     private var currentCountsByID = [Int]()
     private(set) var numIDs = 0
     
-    init() {
+    public init() {
         _registerDefaultPieces()
     }
     
-    func totalPips() -> Int {
+    public func totalPips() -> Int {
         var sum = 0
         for (id, count) in initialCountsByID.enumerated() {
             let piece = pieces[id]
@@ -26,16 +26,16 @@ class PieceStore {
         return sum
     }
     
-    func getID(for name: String) -> Int? {
+    public func getID(for name: String) -> Int? {
         let lower = name.lowercased()
         return idByName[lower]
     }
     
-    func getPiece(for id: Int) -> Piece {
+    public func getPiece(for id: Int) -> Piece {
         return pieces[id]
     }
     
-    func registerInitialCount(_ id: Int, count: Int) -> Bool {
+    public func registerInitialCount(_ id: Int, count: Int) -> Bool {
         guard id < pieces.count, count > 0 else {
             return false
         }
@@ -45,18 +45,18 @@ class PieceStore {
         return true
     }
     
-    func clearRegistrations() {
+    public func clearRegistrations() {
         for i in 0..<pieces.count {
             initialCountsByID[i] = 0
             currentCountsByID[i] = 0
         }
     }
     
-    func clearCheckouts() {
+    public func clearCheckouts() {
         currentCountsByID = initialCountsByID
     }
     
-    func checkOutPiece(_ id: Int) -> Bool {
+    public func checkOutPiece(_ id: Int) -> Bool {
         guard id < pieces.count else {
             return false
         }
@@ -70,7 +70,7 @@ class PieceStore {
         }
     }
     
-    func checkInPiece(_ id: Int) {
+    public func checkInPiece(_ id: Int) {
         guard id < pieces.count else {
             preconditionFailure()
         }

@@ -5,7 +5,7 @@
 //  Created by Michael Brandt on 6/15/22.
 //
 
-class PiecePrinter {
+public class PiecePrinter {
     
     static func GenerateString(_ piece: PieceRotation) -> String {
         let printer = PiecePrinter(piece.size)
