@@ -10,7 +10,7 @@ public class Piece {
     public let rotations: [PieceRotation]
     public let pipCount: Int
     
-    init(_ name: String, points: [Point]) {
+    public init(_ name: String, points: [Point]) {
         self.name = name
         self.pipCount = points.count
         rotations = Piece._generateRotations(points)

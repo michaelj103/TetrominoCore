@@ -6,16 +6,16 @@
 //
 
 public class PieceBoard {
-    let size: Size
+    public let size: Size
     private var filledSpaces: [Bool]
     
-    init(_ size: Size) {
+    public init(_ size: Size) {
         precondition(size.width > 0 && size.height > 0)
         self.size = size
         self.filledSpaces = [Bool](repeating: false, count: size.width * size.height)
     }
     
-    func nextAvailable() -> Point? {
+    public func nextAvailable() -> Point? {
         guard let idx = filledSpaces.firstIndex(of: false) else {
             return nil
         }
@@ -25,13 +25,13 @@ public class PieceBoard {
         return Point(x: x, y: y)
     }
     
-    func clear() {
+    public func clear() {
         for i in 0..<filledSpaces.count {
             filledSpaces[i] = false
         }
     }
     
-    func addPiece(_ piece: PieceRotation, at point: Point) -> Bool {
+    public func addPiece(_ piece: PieceRotation, at point: Point) -> Bool {
         assert(point.x >= 0 && point.y >= 0)
         for piecePoint in piece.pips {
             let fillPoint = Point(x: point.x + piecePoint.x, y: point.y + piecePoint.y)
@@ -46,7 +46,7 @@ public class PieceBoard {
         return true
     }
     
-    func removePiece(_ piece: PieceRotation, at point: Point) {
+    public func removePiece(_ piece: PieceRotation, at point: Point) {
         assert(point.x >= 0 && point.y >= 0)
         for piecePoint in piece.pips {
             let fillPoint = Point(x: point.x + piecePoint.x, y: point.y + piecePoint.y)

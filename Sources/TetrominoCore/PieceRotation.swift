@@ -6,11 +6,11 @@
 //
 
 public class PieceRotation : Equatable {
-    let pips: Set<Point>
-    let size: Size
-    let topPipX: Int
+    public let pips: Set<Point>
+    public let size: Size
+    public let topPipX: Int
     
-    init<S:Sequence>(_ points: S) where S.Element == Point {
+    public init<S:Sequence>(_ points: S) where S.Element == Point {
         var maxX = 0
         var maxY = 0
         var minTopRowX = Int.max
@@ -43,7 +43,7 @@ public class PieceRotation : Equatable {
         self.topPipX = minTopRowX
     }
     
-    func contains(_ pt: Point) -> Bool {
+    public func contains(_ pt: Point) -> Bool {
         return pips.contains(pt)
     }
     

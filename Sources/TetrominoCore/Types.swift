@@ -6,49 +6,49 @@
 //
 
 public struct Point : Hashable {
-    let x: Int
-    let y: Int
+    public let x: Int
+    public let y: Int
     
-    func pointAbove() -> Point {
+    public func pointAbove() -> Point {
         return Point(x: x, y: y-1)
     }
     
-    func pointBelow() -> Point {
+    public func pointBelow() -> Point {
         return Point(x: x, y: y+1)
     }
     
-    func pointRight() -> Point {
+    public func pointRight() -> Point {
         return Point(x: x+1, y: y)
     }
     
-    func pointLeft() -> Point {
+    public func pointLeft() -> Point {
         return Point(x: x-1, y: y)
     }
     
-    func pointUpLeft() -> Point {
+    public func pointUpLeft() -> Point {
         return Point(x: x-1, y: y-1)
     }
     
-    func pointUpRight() -> Point {
+    public func pointUpRight() -> Point {
         return Point(x: x+1, y: y-1)
     }
     
-    func pointDownLeft() -> Point {
+    public func pointDownLeft() -> Point {
         return Point(x: x-1, y: y+1)
     }
     
-    func pointDownRight() -> Point {
+    public func pointDownRight() -> Point {
         return Point(x: x+1, y: y+1)
     }
 }
 
 public struct Size {
-    let width: Int
-    let height: Int
+    public let width: Int
+    public let height: Int
 }
 
 public struct PlacedPiece {
-    let id: Int
-    let rotation: Int
-    let position: Point
+    public let id: Int
+    public let rotation: Int
+    public let position: Point
 }
