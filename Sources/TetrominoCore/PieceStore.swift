@@ -11,7 +11,7 @@ public class PieceStore {
     
     private var initialCountsByID = [Int]()
     private var currentCountsByID = [Int]()
-    private(set) var numIDs = 0
+    public private(set) var numIDs = 0
     
     public init() {
         _registerDefaultPieces()
