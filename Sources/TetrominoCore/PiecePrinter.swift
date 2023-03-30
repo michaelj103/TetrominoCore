@@ -7,7 +7,7 @@
 
 public class PiecePrinter {
     
-    static func GenerateString(_ piece: PieceRotation) -> String {
+    public static func GenerateString(_ piece: PieceRotation) -> String {
         let printer = PiecePrinter(piece.size)
         
         for y in 0..<(piece.size.height) {
@@ -22,7 +22,7 @@ public class PiecePrinter {
         return string
     }
     
-    static func GenerateString(_ dimensions: Size, placements: [PlacedPiece], store: PieceStore) -> String {
+    public static func GenerateString(_ dimensions: Size, placements: [PlacedPiece], store: PieceStore) -> String {
         let printer = PiecePrinter(dimensions)
         
         for placement in placements {
