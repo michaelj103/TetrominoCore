@@ -54,6 +54,12 @@ public class PieceBoard {
         }
     }
     
+    public func isFilled(at pt: Point) -> Bool {
+        assert(pt.x >= 0 && pt.y >= 0 && pt.x < size.width && pt.y < size.height)
+        let idx = (pt.y * size.width) + pt.x
+        return filledSpaces[idx]
+    }
+    
     private func _canFill(at pt: Point) -> Bool {
         guard pt.x < size.width && pt.y < size.height else {
             return false
