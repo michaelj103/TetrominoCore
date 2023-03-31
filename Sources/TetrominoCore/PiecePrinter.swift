@@ -22,7 +22,7 @@ public class PiecePrinter {
         return string
     }
     
-    public static func GenerateString(_ dimensions: Size, placements: [PlacedPiece], store: PieceStore) -> String {
+    public static func GenerateString(_ dimensions: Size, placements: [PlacedPiece], store: PieceIdentifying) -> String {
         let printer = PiecePrinter(dimensions)
         
         for placement in placements {
@@ -79,6 +79,12 @@ public class PiecePrinter {
         return string
     }
 }
+
+public protocol PieceIdentifying {
+    func getPiece(for id: Int) -> Piece
+}
+
+extension PieceStore: PieceIdentifying {}
 
 
 fileprivate extension PieceRotation {
