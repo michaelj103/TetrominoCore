@@ -31,6 +31,7 @@ public class PieceBoard {
         }
     }
     
+    @discardableResult
     public func clearCompletedRows() -> Set<Int> {
         var clearedRows: Set<Int> = []
         for row in 0..<size.height {
@@ -56,8 +57,11 @@ public class PieceBoard {
                 shiftAmount += 1
             } else if shiftAmount > 0 {
                 for col in 0..<size.width {
-                    _unfill(at: Point(x: col, y: row))
-                    _fill(at: Point(x: col, y: row + shiftAmount))
+                    let initialPt = Point(x: col, y: row)
+                    if isFilled(at: initialPt) {
+                        _unfill(at: Point(x: col, y: row))
+                        _fill(at: Point(x: col, y: row + shiftAmount))
+                    }
                 }
             }
         }
