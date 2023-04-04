@@ -103,7 +103,7 @@ public class PieceBoard<T: Equatable> {
             return false
         }
         let idx = (pt.y * size.width) + pt.x
-        return filledSpaces[idx] != unfilledValue
+        return filledSpaces[idx] == unfilledValue
     }
     
     private func _fill(at pt: Point, with val: T) {
