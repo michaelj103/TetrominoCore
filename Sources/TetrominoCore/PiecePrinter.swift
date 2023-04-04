@@ -22,7 +22,7 @@ public class PiecePrinter {
         return string
     }
     
-    public static func GenerateString(_ dimensions: Size, placements: [PlacedPiece], store: PieceIdentifying, board: PieceBoard? = nil) -> String {
+    public static func GenerateString(_ dimensions: Size, placements: [PlacedPiece], store: PieceIdentifying, board: PieceBoard<Bool>? = nil) -> String {
         let printer = PiecePrinter(dimensions)
         
         for placement in placements {
@@ -36,11 +36,11 @@ public class PiecePrinter {
         }
         
         if let fullBoard = board {
-            let placementBoard = PieceBoard(dimensions)
+            let placementBoard = PieceBoard(dimensions, unfilled: false)
             for placement in placements {
                 let piece = store.getPiece(for: placement.id)
                 let rotation = piece.rotations[placement.rotation]
-                placementBoard.addPiece(rotation, at: placement.position)
+                placementBoard.addPiece(rotation, at: placement.position, with: true)
             }
             
             let filledSpace: [Character] = ["\u{250C}", "\u{2500}", "\u{2510}", "\u{2514}", "\u{2500}", "\u{2518}"]
