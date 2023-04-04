@@ -43,8 +43,8 @@ public class PiecePrinter {
                 placementBoard.addPiece(rotation, at: placement.position)
             }
             
-            let filledSpace = [Character](repeating: "\u{2588}", count: 6)
-            for row in 0..<dimensions.height {
+            let filledSpace: [Character] = ["\u{250C}", "\u{2500}", "\u{2510}", "\u{2514}", "\u{2500}", "\u{2518}"]
+             for row in 0..<dimensions.height {
                 for col in 0..<dimensions.width {
                     let pt = Point(x: col, y: row)
                     if fullBoard.isFilled(at: pt) && !placementBoard.isFilled(at: pt) {
