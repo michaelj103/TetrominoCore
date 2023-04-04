@@ -31,6 +31,41 @@ public class PieceBoard {
         }
     }
     
+    public func clearCompletedRows() -> Set<Int> {
+        var clearedRows: Set<Int> = []
+        for row in 0..<size.height {
+            var filledInRow = 0
+            for col in 0..<size.width {
+                if isFilled(at: Point(x: col, y: row)) {
+                    filledInRow += 1
+                } else {
+                    break
+                }
+            }
+            if filledInRow == size.width {
+                clearedRows.insert(row)
+                for col in 0..<size.width {
+                    _unfill(at: Point(x: col, y: row))
+                }
+            }
+        }
+        
+        var shiftAmount = 0
+        for row in (0..<size.height).reversed() {
+            if clearedRows.contains(row) {
+                shiftAmount += 1
+            } else if shiftAmount > 0 {
+                for col in 0..<size.width {
+                    _unfill(at: Point(x: col, y: row))
+                    _fill(at: Point(x: col, y: row + shiftAmount))
+                }
+            }
+        }
+        
+        return clearedRows
+    }
+    
+    @discardableResult
     public func addPiece(_ piece: PieceRotation, at point: Point) -> Bool {
         assert(point.x >= 0 && point.y >= 0)
         for piecePoint in piece.pips {
