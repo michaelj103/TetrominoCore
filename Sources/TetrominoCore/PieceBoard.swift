@@ -93,9 +93,13 @@ public class PieceBoard<T: Equatable> {
     }
     
     public func isFilled(at pt: Point) -> Bool {
+        return getValue(at: pt) != unfilledValue
+    }
+    
+    public func getValue(at pt: Point) -> T {
         assert(pt.x >= 0 && pt.y >= 0 && pt.x < size.width && pt.y < size.height)
         let idx = (pt.y * size.width) + pt.x
-        return filledSpaces[idx] != unfilledValue
+        return filledSpaces[idx]
     }
     
     private func _canFill(at pt: Point) -> Bool {
